@@ -70,7 +70,7 @@ with open('internal/INTENTIONS.TXT', 'w') as f:
     f.write('Charge temp6.flac with the following, using Resonance Field and Anthro Black Hole:\n')
 with open('internal/INTENTIONS.TXT', 'a') as f:
     f.write(affirmations)
-os.system('internal/./intrpt -m 1 -i "NEST-100" -d 00:05:00 > /dev/null 2>&1')
+os.system('internal/./intrpt -m 2 -i "NEST-100.TXT" -d 00:05:00 > /dev/null 2>&1')
 os.system("mv internal/temp6.flac final_$(date +%F-%H:%M).flac > /dev/null 2>&1")
 os.system("pkill audacity")
 os.system("pkill xvfb")
