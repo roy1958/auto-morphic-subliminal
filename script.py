@@ -26,6 +26,8 @@ speed = input("Choose speed: normal, 2, 4, 8, or 16: ")
 sys.stdout = open(os.devnull, 'w')
 os.system("gtts-cli --lang en --file text.txt -o internal/templayer.mp3 > /dev/null 2>&1")
 os.system('ffmpeg -y -i internal/temp1.mp3 -i internal/templayer.mp3 -filter_complex "[0:0]volume=1[a];[1:0]volume=1.0[b];[a][b]amix=inputs=2:duration=first:dropout_transition=0" -ac 2 -b:a 1M -crf 5 internal/templayer_.mp3 > /dev/null 2>&1')
+if speed == "normal":
+	os.system('mv internal/templayer_.mp3 internal/temp1_.mp3 > /dev/null 2>&1')
 if speed == "2":
 	os.system('ffmpeg -i internal/templayer_.mp3 -filter:a "atempo=2.0" internal/temp1_.mp3 > /dev/null 2>&1')
 if speed == "4":
