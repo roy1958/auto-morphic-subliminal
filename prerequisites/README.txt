@@ -9,6 +9,6 @@ Type: (cd audacity/build/ && ./audacity)
 
 Go to Edit > Preferences > Modules and set to ENABLE.
 
-Go to Effects > Add Plug-in > scroll down and choose Enable on "ultrasonic.ny".
+Go to Effects > Add Plug-in > scroll down and choose Enable on "ultrasonic.ny" in the /home/ directory.
 
 Done.
