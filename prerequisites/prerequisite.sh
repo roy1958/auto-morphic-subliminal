@@ -3,9 +3,9 @@ sudo apt-get install ffmpeg build-essential xvfb cmake libasound2-dev libgtk2.0-
 pip3 install gtts
 
 (cd audacity/wxWidgets/wxWidgets && sudo ./configure --with-gtk)
-(cd audacity/wxWidgets/wxWidgets && sudo make -j 4 clean)
-(cd audacity/wxWidgets/wxWidgets && sudo make -j 4)
-(cd audacity/wxWidgets/wxWidgets && sudo make -j 4 install)
+(cd audacity/wxWidgets/wxWidgets && sudo make -j$(nproc) clean)
+(cd audacity/wxWidgets/wxWidgets && sudo make -j$(nproc))
+(cd audacity/wxWidgets/wxWidgets && sudo make -j$(nproc) install)
 sudo ldconfig
 
 mkdir ~/.audacity-files/
