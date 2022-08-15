@@ -5,7 +5,7 @@ Open terminal in this folder
 Type: sudo chmod u+x prerequisite.sh
 Type: ./prerequisite.sh
 
-Type: audacity/build/audacity
+Type: (cd audacity/build/ && ./audacity)
 
 Go to Edit > Preferences > Modules and set to ENABLE.
 
