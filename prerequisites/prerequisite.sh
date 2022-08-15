@@ -2,11 +2,12 @@
 sudo apt-get install ffmpeg build-essential xvfb cmake libasound2-dev libgtk2.0-dev libgtk-3-dev autoconf automake libmad0-dev liblilv-0-0 liblilv-dev lilv-utils python3-pip python3
 pip3 install gtts
 
-(cd audacity/wxWidgets/wxWidgets && ./configure --with-gtk)
-(cd audacity/wxWidgets/wxWidgets && make clean)
-(cd audacity/wxWidgets/wxWidgets && make)
-(cd audacity/wxWidgets/wxWidgets && sudo make install)
+(cd audacity/wxWidgets/wxWidgets && sudo ./configure --with-gtk)
+(cd audacity/wxWidgets/wxWidgets && sudo make -j 4 clean)
+(cd audacity/wxWidgets/wxWidgets && sudo make -j 4)
+(cd audacity/wxWidgets/wxWidgets && sudo make -j 4 install)
 sudo ldconfig
+
 mkdir ~/.audacity-files/
 mkdir ~/.audacity-files/plug-ins/
 cp ultrasonic.ny ~/.audacity-files/plug-ins/ultrasonic.ny
