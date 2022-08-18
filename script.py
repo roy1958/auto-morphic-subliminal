@@ -24,6 +24,7 @@ random.shuffle(lines)
 open('text.txt', 'w').writelines(lines)
 speed = input("Choose speed: normal, 2, 4, 8, or 16: ")
 sys.stdout = open(os.devnull, 'w')
+os.system("export PATH="$HOME/.local/bin:$PATH")
 os.system("gtts-cli --lang en --file text.txt -o internal/templayer.mp3 > /dev/null 2>&1")
 os.system('ffmpeg -y -i internal/temp1.mp3 -i internal/templayer.mp3 -filter_complex "[0:0]volume=1[a];[1:0]volume=1.0[b];[a][b]amix=inputs=2:duration=first:dropout_transition=0" -ac 2 -b:a 1M -crf 5 internal/templayer_.mp3 > /dev/null 2>&1')
 if speed == "normal":
