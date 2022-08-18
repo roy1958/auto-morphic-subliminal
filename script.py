@@ -42,7 +42,7 @@ os.system("ffmpeg -stream_loop -1 -i internal/temp1_.mp3 -c copy -t 1800 interna
 os.system("rm internal/temp1_.mp3 > /dev/null 2>&1")
 os.system("rm internal/templayer.mp3 > /dev/null 2>&1")
 os.system("rm internal/templayer_.mp3 > /dev/null 2>&1")
-os.system('ffmpeg -y -i internal/temp2.mp3 -i internal/brook.mp3 -filter_complex "[0:0]volume=0.4[a];[1:0]volume=2.5[b];[a][b]amix=inputs=2:duration=first:dropout_transition=0" -ac 2 -b:a 1M -crf 5 internal/temp3.flac > /dev/null 2>&1')
+os.system('ffmpeg -y -i internal/temp2.mp3 -i internal/brook.mp3 -filter_complex "[0:0]volume=0.3[a];[1:0]volume=2.5[b];[a][b]amix=inputs=2:duration=first:dropout_transition=0" -ac 2 -b:a 1M -crf 5 internal/temp3.flac > /dev/null 2>&1')
 os.system("ffmpeg -i internal/temp3.flac -af volume=3 -vcodec copy internal/temp4.flac > /dev/null 2>&1")
 os.system("rm internal/temp3.flac > /dev/null 2>&1")
 os.system('ffmpeg -i internal/temp4.flac -af "afade=t=in:st=0:d=5" internal/temp5.flac > /dev/null 2>&1')
